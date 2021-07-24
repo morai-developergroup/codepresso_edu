@@ -19,17 +19,7 @@ user_ip = params["user_ip"]
 host_ip = params["host_ip"]
 
 
-status_port =params["vehicle_status_dst_port"]
-object_port =params["object_info_dst_port"]
-get_traffic_port=params["get_traffic_dst_port"]
-
-set_traffic_port=params["set_traffic_host_port"]
 ctrl_cmd_port = params["ctrl_cmd_host_port"]
-
-planner_path_file_name = params["planner_path_file_name"]
-
-traffic_greenlight_setting= params["traffic_greenlight_setting"]
-
 
 class ctrl_cmd :
 

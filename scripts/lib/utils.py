@@ -52,10 +52,10 @@ def findLocalPath(ref_path,position_x,position_y):
             current_waypoint=i
 
 
-    if current_waypoint+50 > len(ref_path) :
+    if current_waypoint+100 > len(ref_path) :
         last_local_waypoint= len(ref_path)
     else :
-        last_local_waypoint=current_waypoint+50
+        last_local_waypoint=current_waypoint+100
 
     for i in range(current_waypoint,last_local_waypoint) :
         tmp_pose=[]
@@ -111,7 +111,8 @@ class purePursuit :
                 
                 if dis>= self.lfd :
                     
-                    self.lfd=self.current_vel*0.3 # or 0.4
+                    self.lfd=self.current_vel/3.6*0.66 # or 0.4
+                    # print(self.lfd)
                     if self.lfd < self.min_lfd : 
                         self.lfd=self.min_lfd
                     elif self.lfd > self.max_lfd :
@@ -163,7 +164,7 @@ class velocityPlanning : #경로기반속도계획
             b=a_matrix[1]
             c=a_matrix[2]
             r=sqrt(a*a+b*b-c)
-            v_max=sqrt(r*9.8*self.road_friction)  #0.7
+            v_max=sqrt(r*9.8*self.road_friction)*3.6  #0.7
             if v_max>self.car_max_speed :
                 v_max=self.car_max_speed
             out_vel_plan.append(v_max)

@@ -70,8 +70,8 @@ class planner :
                              [132.70,1624.78 ,'C119BS010034']]
         
 
-        vel_planner=velocityPlanning(60,2) ## 속도 계획
-        self.vel_profile=vel_planner.curveBasedVelocity(self.global_path,100)        
+        vel_planner=velocityPlanning(60,0.3) ## 속도 계획
+        self.vel_profile=vel_planner.curveBasedVelocity(self.global_path,30)        
 
         self.pure_pursuit=purePursuit()
         self.cc=cruiseControl(1.0,0.5) ## cruiseControl import (object_vel_gain, object_dis_gain)

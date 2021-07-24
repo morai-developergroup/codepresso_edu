@@ -36,7 +36,7 @@ class set_traffic_light :
         self.timer.start()
                
         traffic_id='C119BS010021'
-        traffic_status=4
+        traffic_status=1
         self.set_traffic.send_data([False,traffic_id,traffic_status])
         
 
